@@ -1,0 +1,5 @@
+plans.json
+dist
+node_modules
+.parcel-cache
+public

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Managed</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <script type="module" src="./components/container.ts"></script>
+    <script type="module" src="./components/router.ts"></script>
+    <script type="module" src="./components/buttons.ts"></script>
+    <script type="module" src="./components/plan-input.ts"></script>
+</head>
+<body>
+    <managed-router $ref="router"></managed-router>
+
+    <managed-router-slot path="/">
+      <div>
+        <managed-container>
+          <h1>TIME MANAGED</h1>
+        </managed-container>
+        <managed-container squeeze="700px">
+            <h3>A simple stream planner that gives you a neat little overlay to keep track of what you've planned for your stream and how long each segment will take </h3>
+        </managed-container>
+        <managed-gsorlist style="margin: auto"></managed-gsorlist>
+      </div>
+    </managed-router-slot>
+
+    <managed-router-slot path="/create">
+      <managed-container pinned="top-left" bordered="false" shadowed="false">
+        <managed-homebutton text="HOME" action="neutral-action" size="small"></managed-homebutton>
+      </managed-container>
+      <div>
+        <managed-container>
+          <h2 contenteditable="true" id="plan-name-header">NEW STREAM PLAN</h2>
+          <!-- <br> -->
+          <!-- <managed-plannameinput></managed-plannameinput> -->
+        </managed-container>
+        <managed-planlist $ref="planList"></managed-planlist>
+        <managed-container pinned="bottom" bordered="false" shadowed="false">
+          <div>
+            <managed-debutton $ref="debutton" size="small" inline="true" action="negative-action"></managed-debutton>
+            <managed-sebutton action=neutral-action size=small inline="true"></managed-sebutton>
+            <managed-adbutton $ref="adbutton" size=small inline="true" action="positive-action"></managed-adbutton>
+          </div>
+        </managed-container>
+      </div>
+    </managed-router-slot>
+
+    <managed-router-slot style="max-width: none; margin-top: -3%;" path="/overlay">
+      <managed-ovcontainer></managed-ovcontainer>
+    </managed-router-slot>
+</body>
+</html>

@@ -7,7 +7,8 @@
         "dev": "npm run fe & npm run be",
         "fe": "parcel www/index.html",
         "be": "ts-node src/index.ts",
-        "build": "parcel build www/index.html --dist-dir public"
+        "build": "parcel build www/index.html --dist-dir public",
+        "start": "npm run be"
     },
     "keywords": [],
     "author": "",

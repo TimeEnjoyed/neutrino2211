@@ -166,7 +166,7 @@ const OverlayContainer: FunctionalWidget<StatefulWidget> = function () {
       grid-template-rows: 1fr;
       grid-column-gap: 0px;
       grid-row-gap: 0px;
-      font-size: 4rem;
+      font-size: 3rem;
       padding: 0 2rem;
       border: 1rem solid black;
     ">

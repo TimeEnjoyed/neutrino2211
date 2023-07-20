@@ -17,6 +17,24 @@ $ npm run build && npm start
 
 Navigate to http://localhost:3030 to get started
 
+### Docker Setup
+
+Create a plans.json file in some location, and just enter curly braces in it so it's valid json.
+```json
+{
+  
+}
+```
+
+Build and run the container, specifying:
+* the location of the plans.json file
+```bash
+docker build -t neutrino2211-time-managed .
+docker run -p 3030:3030/tcp -v [/path/to/]plans.json:/app/plans.json -d neutrino2211-time-managed 
+```
+Navigate to http://localhost:3030 to get started
+
+
 #### Create A plan
 
 Since you ave not created a plan before, there'll be a green button "GET STARTED", click it to go to the create plan page.
